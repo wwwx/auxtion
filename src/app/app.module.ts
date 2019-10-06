@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -12,6 +13,7 @@ import { SearchComponent } from './search/search.component'
 import { DetailComponent } from './detail/detail.component'
 import { HomeComponent } from './home/home.component'
 import { ProductService } from './shared/product.service'
+import { FilterPipe } from './pipe/filter.pipe'
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { ProductService } from './shared/product.service'
     StarsComponent,
     SearchComponent,
     DetailComponent,
-    HomeComponent
+    HomeComponent,
+    FilterPipe
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })
